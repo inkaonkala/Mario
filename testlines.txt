@@ -1,0 +1,123 @@
+void    TEST_LINES(1)
+{
+
+    ./pipex in.txt "ls" "wc" out.txt
+
+    ./pipex in.txt "cat" "wc -l" out.txt
+    < in.txt cat | wc -l > out.txt
+
+    ./pipex . "ls -l" "wc -l" out.txt
+    ls -l | wc -l > out.txt
+
+    ./pipex in.txt "grep pattern" "wc -l" out.txt
+    < in.txt grep pattern | wc -l > out.txt
+
+    ./pipex in.txt "sort" "uniq" out.txt
+    < in.txt sort | uniq > out.txt
+}
+
+
+void ERROR_CASES(2)
+{
+	./pipex in.txt "grep nonexistentpattern" "wc -l" out.txt
+    < in.txt grep nonexistentpattern | wc -l > out.txt
+    
+    ./pipex in.txt "grep Now" "wc -w" out.txt
+    < in.txt grep Now | wc -w > out.txt
+
+    while(two_parters)
+    {
+        ./pipex in.txt "grep Now" "cat" out.txt
+        < in.txt grep Now | cat > out.txt
+        then:
+        ./pipex in.txt "wc -w" "cat" out.txt
+        < in.txt wc -w | cat > out.txt
+
+	}
+
+	if (SLEEP)
+	{
+	< pipex.h ls | sleep 10000 > outfile.txt  
+	if (interrups the process:)
+	
+    	./pipex in.txt "sleep 10" "wc -l" out.txt
+    	Expected Action: Run and then interrupt with Ctrl+C to see how the program handles 
+	}
+
+
+
+    ./pipex "in.txt" "cat" "notexisting" "out.txt"
+    < in.txt cat | notexisting > out.txt
+
+    ./pipex "in.txt" "grep Now" "/bin/cat" "out.txt"
+    < in.txt grep Now | /bin/cat > out.txt
+
+
+    ./pipex "/dev/urandom" "cat" "head -1" "test-xx.txt"
+    < /dev/urandom cat | head -1 > outfile.txt    
+}
+
+
+void    ERROR_MESSAGES(commands failed!)
+{
+    ./pipex non_existent.txt "cat" "wc -l" out.txt
+
+    ./pipex in.txt "foobar" "wc -l" out.txt
+   < in.txt foobar | wc -l > out.txt
+
+    ./pipex "assets/deepthought.txt" "grep 'Deep Thought'" "/bin/cat" "test-xx.txt"
+    < assets/deepthought.txt grep "Deep Thought" | /bin/cat > outfile.txt
+
+	while(permissions denied)
+	{
+
+		permission denied, input:
+		chmod -r in.txt
+		./pipex in.txt "cat" "wc -l" out.txt
+		chmod +r in.txt
+
+	    permission denied outout:
+		touch out.txt
+		chmod -w out.txt
+		./pipex in.txt "cat" "wc -l" out.txt
+    	chmod +w out.txt
+	}
+
+	./pipex in.txt "cat" "wc -l"
+
+    ./pipex in.txt "cat" "exit 1" out.txt
+    <in.txt "cat" | "exit 1"> out.txt
+
+    ./pipex in.txt "invalid_cmd" "wc -l" out.txt
+
+	./pipex in.txt "   " "" out.txt
+	< in.txt "   " | "" > out.txt 
+
+	./pipex in.txt libft libft "out.txt"
+	< in.txt libft | libft > out.txt 
+
+	./pipex in.txt "notexisting" "wc" out.txt
+    	(notexisting is a command that is not supposed to exist)
+    	< in.txt notexisting | wc > outfile.txt
+}  
+
+
+!!!!!!!!!!!!THIS HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+void CHECK_THESE(i can not do this enymore)
+{
+
+
+	while (WHAT IS THIS ??)
+	{
+		./pipex in.txt "grep pattern" "cut -d ' ' -f 1" out.txt
+		< in.txt grep pattern | cut -d ' ' -f 1 > out.txt
+	}
+
+
+	if(EMPTIES!)
+	{
+		./pipex in.txt "   ls -w " "cat" "out.txt"
+		< in.txt      ls -w | cat > out.txt 
+	}
+}
