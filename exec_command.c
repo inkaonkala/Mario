@@ -78,7 +78,7 @@ int	create_child(t_pipes *pipe, char **envp, int index)
 			execve(pipe->cmd_paths[index], pipe->cmd_args[index], envp);
 		else
 		{
-			perror("command not found");
+			perror("Bananas!: Command not found");
 			clean_n_errors(pipe);
 			exit(1);
 		}

@@ -43,7 +43,7 @@ static int	pipex(int arc, char **arv, char **envp)
 	init_pipes(pipe);
 	if (!handle_commands(pipe, arc, arv, envp))
 	{
-		ft_printf("Commands failed\n");
+		ft_printf("Bananas! Commands failed\n");
 		return (1);
 	}
 	i = -1;
@@ -69,7 +69,7 @@ static int	arv_check(int arc, char **arv)
 	{
 		if (ft_strlen(arv[i]) == 0)
 		{
-			ft_printf("Empty command!\n");
+			ft_printf("Bananas!: Empty command!\n");
 			return (1);
 		}
 		i++;
@@ -77,7 +77,7 @@ static int	arv_check(int arc, char **arv)
 	i = 1;
 	while (i < arc)
 	{
-		if (arv[i][0] == ' ')
+		if (check_empties(arv[i]) > 0)
 			return (1);
 		i++;
 	}
@@ -91,6 +91,8 @@ int	main(int arc, char **arv, char **envp)
 	if (arc == 5)
 		pipex(arc, arv, envp);
 	else
-		ft_printf("Wrong amount of arguments\n");
+		ft_printf("Bananas!: Wrong amount of arguments\n");
 	return (0);
 }
+
+//	ft_printf("%s\n", pipe->cmd_paths[1])

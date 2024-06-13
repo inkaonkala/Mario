@@ -12,6 +12,20 @@
 
 #include "pipex.h"
 
+int	check_empties(char *arv)
+{
+	int	i;
+
+	i = 0;
+	while (arv[i] != '\0')
+	{
+		if (arv[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	free_array(char ***paths, int arc)
 {
 	int	i;

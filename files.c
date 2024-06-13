@@ -25,7 +25,7 @@ int	get_infile(t_pipes *pipe, char **arv)
 		pipe->fd_input = open(HERE_DOC_PATH, O_RDONLY);
 		if (pipe->fd_input == -1)
 		{
-			perror("Error opening input file");
+			perror("Bananas!: Error opening input file");
 			return (-1);
 		}
 	}
@@ -34,7 +34,7 @@ int	get_infile(t_pipes *pipe, char **arv)
 		fd = open(arv[1], O_RDONLY);
 		if (fd == -1)
 		{
-			perror("Error opening input file");
+			perror("Bananas!: Error opening input file");
 			return (-1);
 		}
 		pipe->fd_input = fd;
@@ -51,7 +51,7 @@ int	get_outfile(t_pipes *p, char **a, int arc)
 	if (p->fd_output == -1)
 	{
 		clean_n_errors(p);
-		perror("Error opening output file");
+		perror("Bananas!: Error opening output file");
 		exit(1);
 	}
 	return (p->fd_output);
@@ -66,12 +66,12 @@ t_bool	check_arguments(t_pipes *pipe, int arc, char **arv)
 		return (false);
 	if (get_infile(pipe, arv) == -1)
 	{
-		perror("infile does not work\n");
+		perror("Bananas!: Infile does not work\n");
 		return (false);
 	}
 	if (get_outfile(pipe, arv, arc) == -1)
 	{
-		perror("bad arguments! \n");
+		perror("Bananas!: Bad arguments! \n");
 		return (false);
 	}
 	pipe->cmd_count = arc - 3 - pipe->is_here_doc;

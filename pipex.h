@@ -64,6 +64,7 @@ int		create_child(t_pipes *pipe, char **envp, int index);
 
 //clean_n_errors
 
+int		check_empties(char *arv);
 void	free_line(char **paths, int arc);
 void	free_array(char ***paths, int arc);
 void	clean_n_errors(t_pipes *pipe);
