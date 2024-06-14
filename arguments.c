@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   arguments.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iniska <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iniska <iniska@student.hive.f              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 10:16:47 by iniska            #+#    #+#             */
 /*   Updated: 2024/05/09 10:17:01 by iniska           ###   ########.fr       */

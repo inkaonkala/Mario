@@ -20,7 +20,6 @@ OBJ = $(SRC:.c=.o)
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
 CC = cc
-AR = ar rcs
 FLAGS = -Wall -Wextra -Werror
 LDFLAGS = -L/Users/iniska/Desktop/Code/libft
 LDLIBS = -lft
@@ -29,13 +28,14 @@ INCLUDES = -I/Users/iniska/Desktop/Code/libft
 
 all: $(NAME)
 
-$(NAME): fclean $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-	$(CC) $(FLAGS) -o $@ main.c $(NAME) $(LDFLAGS) $(LDLIBS) 
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) -o $@ $(OBJ) $(LDFLAGS) $(LDLIBS) 
 
-bonus: fclean clean $(BONUS_OBJ)
-	$(AR) $(NAME) $(BONUS_OBJ)
-	$(CC) $(FLAGS) -o pipex bonus_main.c $(NAME) $(LDFLAGS) $(LDLIBS)
+bonus: .bonus
+
+.bonus: $(BONUS_OBJ)
+	$(CC) $(FLAGS) -o $(NAME) $(LDFLAGS) $(LDLIBS) $(BONUS_OBJ)
+	touch .bonus
 
 %.o: %.c
 	$(CC) -c $(FLAGS) $(INCLUDES) $< -o $@
@@ -44,11 +44,11 @@ clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) .bonus
 
 re: fclean all
 
-.PHONY: all clean flean re
+.PHONY: all clean flean re bonus
 
 
 

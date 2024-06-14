@@ -87,7 +87,10 @@ static int	arv_check(int arc, char **arv)
 int	main(int arc, char **arv, char **envp)
 {
 	if (arv_check(arc, arv) > 0)
+	{
+		ft_printf("Bananas!: Empty arguments!\n");
 		exit(1);
+	}
 	if (arc == 5)
 		pipex(arc, arv, envp);
 	else

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   here_dog.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iniska <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 17:50:53 by iniska            #+#    #+#             */
 /*   Updated: 2024/05/20 17:51:41 by iniska           ###   ########.fr       */
@@ -13,7 +13,6 @@
 #include "pipex.h"
 #include "/Users/iniska/Desktop/Code/libft/libft.h"
 
-// write get line!
 void	handle_the_dog(const char *arv)
 {
 	int		fd;

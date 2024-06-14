@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   clean_n_errors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iniska <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 16:41:50 by iniska            #+#    #+#             */
 /*   Updated: 2024/05/06 16:42:50 by iniska           ###   ########.fr       */

@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   files.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iniska <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: iniska <iniska@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 12:04:29 by iniska            #+#    #+#             */
 /*   Updated: 2024/05/07 16:50:18 by iniska           ###   ########.fr       */
@@ -12,7 +12,6 @@
 
 #include "pipex.h"
 
-// CHECK THIS
 int	get_infile(t_pipes *pipe, char **arv)
 {
 	int	fd;
